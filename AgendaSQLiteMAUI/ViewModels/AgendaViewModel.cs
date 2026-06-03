@@ -1,0 +1,222 @@
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using AgendaSQLiteMAUI.Models;
+using AgendaSQLiteMAUI.Services;
+
+namespace AgendaSQLiteMAUI.ViewModels
+{
+    public class AgendaViewModel : INotifyPropertyChanged
+    {
+        private readonly BaseDatosService baseDatosService;
+        private ObservableCollection<Contacto> contactos;
+        private Contacto contactoSeleccionado;
+        private string termino_busqueda;
+        private bool mostrar_formulario;
+
+        public ObservableCollection<Contacto> Contactos
+        {
+            get => contactos;
+            set
+            {
+                if (contactos != value)
+                {
+                    contactos = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public Contacto ContactoSeleccionado
+        {
+            get => contactoSeleccionado;
+            set
+            {
+                if (contactoSeleccionado != value)
+                {
+                    contactoSeleccionado = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string TerminoBusqueda
+        {
+            get => termino_busqueda;
+            set
+            {
+                if (termino_busqueda != value)
+                {
+                    termino_busqueda = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public bool MostrarFormulario
+        {
+            get => mostrar_formulario;
+            set
+            {
+                if (mostrar_formulario != value)
+                {
+                    mostrar_formulario = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public ICommand CargarContactosCommand { get; }
+        public ICommand AgregarContactoCommand { get; }
+        public ICommand EditarContactoCommand { get; }
+        public ICommand EliminarContactoCommand { get; }
+        public ICommand BuscarContactosCommand { get; }
+        public ICommand LimpiarBusquedaCommand { get; }
+
+        public AgendaViewModel(BaseDatosService baseDatosService)
+        {
+            this.baseDatosService = baseDatosService;
+            contactos = new ObservableCollection<Contacto>();
+            contactoSeleccionado = new Contacto();
+            termino_busqueda = "";
+            mostrar_formulario = false;
+
+            CargarContactosCommand = new Command(async () => await CargarContactos());
+            AgregarContactoCommand = new Command(MostrarFormularioAgregar);
+            EditarContactoCommand = new Command<Contacto>(MostrarFormularioEditar);
+            EliminarContactoCommand = new Command<Contacto>(async (c) => await EliminarContacto(c));
+            BuscarContactosCommand = new Command(async () => await BuscarContactos());
+            LimpiarBusquedaCommand = new Command(async () => await LimpiarBusqueda());
+        }
+
+        public async Task CargarContactos()
+        {
+            try
+            {
+                var lista = await baseDatosService.ObtenerTodosLosContactos();
+                Contactos.Clear();
+                foreach (var contacto in lista.OrderBy(c => c.Nombre))
+                    Contactos.Add(contacto);
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
+
+        private void MostrarFormularioAgregar()
+        {
+            ContactoSeleccionado = new Contacto();
+            MostrarFormulario = true;
+        }
+
+        private void MostrarFormularioEditar(Contacto contacto)
+        {
+            if (contacto != null)
+            {
+                ContactoSeleccionado = new Contacto
+                {
+                    Id = contacto.Id,
+                    Nombre = contacto.Nombre,
+                    Telefono = contacto.Telefono,
+                    Email = contacto.Email,
+                    Direccion = contacto.Direccion,
+                    FechaCreacion = contacto.FechaCreacion
+                };
+                MostrarFormulario = true;
+            }
+        }
+
+        public async Task GuardarContacto()
+        {
+            if (string.IsNullOrWhiteSpace(ContactoSeleccionado.Nombre))
+            {
+                await Application.Current.MainPage.DisplayAlert("Validación", "El nombre es requerido", "OK");
+                return;
+            }
+
+            try
+            {
+                if (ContactoSeleccionado.Id == 0)
+                    await baseDatosService.InsertarContacto(ContactoSeleccionado);
+                else
+                    await baseDatosService.ActualizarContacto(ContactoSeleccionado);
+
+                MostrarFormulario = false;
+                await CargarContactos();
+                await Application.Current.MainPage.DisplayAlert("Éxito", "Contacto guardado correctamente", "OK");
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
+
+        private async Task EliminarContacto(Contacto contacto)
+        {
+            if (contacto == null)
+                return;
+
+            var respuesta = await Application.Current.MainPage.DisplayAlert(
+                "Confirmar",
+                $"¿Eliminar a {contacto.Nombre}?",
+                "Sí",
+                "No");
+
+            if (respuesta)
+            {
+                try
+                {
+                    await baseDatosService.EliminarContacto(contacto.Id);
+                    await CargarContactos();
+                    await Application.Current.MainPage.DisplayAlert("Éxito", "Contacto eliminado", "OK");
+                }
+                catch (Exception ex)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+                }
+            }
+        }
+
+        private async Task BuscarContactos()
+        {
+            if (string.IsNullOrWhiteSpace(TerminoBusqueda))
+            {
+                await CargarContactos();
+                return;
+            }
+
+            try
+            {
+                var lista = await baseDatosService.BuscarContactos(TerminoBusqueda);
+                Contactos.Clear();
+                foreach (var contacto in lista.OrderBy(c => c.Nombre))
+                    Contactos.Add(contacto);
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
+
+        private async Task LimpiarBusqueda()
+        {
+            TerminoBusqueda = "";
+            await CargarContactos();
+        }
+
+        public void CancelarFormulario()
+        {
+            MostrarFormulario = false;
+            ContactoSeleccionado = new Contacto();
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<api>
+  <jcw-types>
+    <type name="MainActivity" package="crc64148d0ec8fd5e13b7" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiAppCompatActivity" partial_assembly_qualified_name="MiPrimeraAppMAUI.MainActivity, MiPrimeraAppMAUI">
+      <constructors>
+        <constructor name="MainActivity" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="MainActivity" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+    </type>
+    <type name="MainApplication" package="crc64148d0ec8fd5e13b7" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiApplication" is_application="True" partial_assembly_qualified_name="MiPrimeraAppMAUI.MainApplication, MiPrimeraAppMAUI" application_constructor="MainApplication" />
+  </jcw-types>
+  <acw-types partial-assembly-name="MiPrimeraAppMAUI" module-name="MiPrimeraAppMAUI.dll">
+    <type assembly-qualified-name="MiPrimeraAppMAUI.MainActivity, MiPrimeraAppMAUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="miprimeraappmaui.MainActivity" java-key="crc64148d0ec8fd5e13b7.MainActivity" managed-key="MiPrimeraAppMAUI.MainActivity" partial-assembly-qualified-name="MiPrimeraAppMAUI.MainActivity, MiPrimeraAppMAUI" />
+    <type assembly-qualified-name="MiPrimeraAppMAUI.MainApplication, MiPrimeraAppMAUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="miprimeraappmaui.MainApplication" java-key="crc64148d0ec8fd5e13b7.MainApplication" managed-key="MiPrimeraAppMAUI.MainApplication" partial-assembly-qualified-name="MiPrimeraAppMAUI.MainApplication, MiPrimeraAppMAUI" />
+  </acw-types>
+</api>

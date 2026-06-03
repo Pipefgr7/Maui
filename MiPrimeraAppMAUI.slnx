@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="AgendaSQLiteMAUI/AgendaSQLiteMAUI.csproj" />
+  <Project Path="ClimaAppMAUI/ClimaAppMAUI.csproj" />
+  <Project Path="ListaTareasMAUI/ListaTareasMAUI.csproj" />
+  <Project Path="MiniCalculadoraMAUI/MiniCalculadoraMAUI.csproj" />
+  <Project Path="MiPrimeraAppMAUI/MiPrimeraAppMAUI.csproj" />
+</Solution>

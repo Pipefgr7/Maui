@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="MiPrimeraAppMAUI" mvid="f354cfde00774bd29b3ba0ddc0306cec">
+  <java-to-managed>
+    <entry java-name="crc64148d0ec8fd5e13b7/MainActivity" managed-name="MiPrimeraAppMAUI.MainActivity, MiPrimeraAppMAUI" managed-type-token-id="33554442" />
+    <entry java-name="crc64148d0ec8fd5e13b7/MainApplication" managed-name="MiPrimeraAppMAUI.MainApplication, MiPrimeraAppMAUI" managed-type-token-id="33554443" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64148d0ec8fd5e13b7/MainActivity" managed-name="MiPrimeraAppMAUI.MainActivity, MiPrimeraAppMAUI" managed-type-token-id="33554442" />
+    <entry java-name="crc64148d0ec8fd5e13b7/MainApplication" managed-name="MiPrimeraAppMAUI.MainApplication, MiPrimeraAppMAUI" managed-type-token-id="33554443" />
+  </managed-to-java>
+</api>

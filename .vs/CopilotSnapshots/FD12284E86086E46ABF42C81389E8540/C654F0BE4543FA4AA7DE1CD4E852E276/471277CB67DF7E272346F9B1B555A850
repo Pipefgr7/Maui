@@ -1,0 +1,68 @@
+﻿using SQLite;
+using AgendaSQLiteMAUI.Models;
+
+namespace AgendaSQLiteMAUI.Services
+{
+    public class BaseDatosService
+    {
+        private SQLiteAsyncConnection conexion;
+        private const string nombreBD = "agenda.db3";
+
+        public async Task InicializarBaseDatos()
+        {
+            if (conexion != null)
+                return;
+
+            var rutaBD = Path.Combine(FileSystem.AppDataDirectory, nombreBD);
+            conexion = new SQLiteAsyncConnection(rutaBD);
+            await conexion.CreateTableAsync<Contacto>();
+        }
+
+        public async Task<List<Contacto>> ObtenerTodosLosContactos()
+        {
+            await InicializarBaseDatos();
+            return await conexion.Table<Contacto>().ToListAsync();
+        }
+
+        public async Task<Contacto> ObtenerContactoPorId(int id)
+        {
+            await InicializarBaseDatos();
+            return await conexion.Table<Contacto>()
+                .Where(c => c.Id == id)
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Contacto>> BuscarContactos(string termino)
+        {
+            await InicializarBaseDatos();
+            return await conexion.Table<Contacto>()
+                .Where(c => c.Nombre.Contains(termino) || c.Telefono.Contains(termino))
+                .ToListAsync();
+        }
+
+        public async Task<int> InsertarContacto(Contacto contacto)
+        {
+            await InicializarBaseDatos();
+            contacto.FechaCreacion = DateTime.Now;
+            return await conexion.InsertAsync(contacto);
+        }
+
+        public async Task<int> ActualizarContacto(Contacto contacto)
+        {
+            await InicializarBaseDatos();
+            return await conexion.UpdateAsync(contacto);
+        }
+
+        public async Task<int> EliminarContacto(int id)
+        {
+            await InicializarBaseDatos();
+            return await conexion.DeleteAsync<Contacto>(id);
+        }
+
+        public async Task<int> EliminarTodosLosContactos()
+        {
+            await InicializarBaseDatos();
+            return await conexion.DeleteAllAsync<Contacto>();
+        }
+    }
+}

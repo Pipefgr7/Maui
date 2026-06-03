@@ -1,0 +1,80 @@
+﻿namespace MiniCalculadoraMAUI;
+
+public partial class MainPage : ContentPage
+{
+	public MainPage()
+	{
+		InitializeComponent();
+	}
+
+	private void OnCalcularClicked(object sender, EventArgs e)
+	{
+		MensajeLabel.Text = "";
+		ResultadoLabel.Text = "Resultado: ";
+
+		if (string.IsNullOrWhiteSpace(Numero1Entry.Text) || string.IsNullOrWhiteSpace(Numero2Entry.Text))
+		{
+			MensajeLabel.Text = "Por favor, ingresa ambos números";
+			MensajeLabel.TextColor = Colors.Red;
+			return;
+		}
+
+		if (!double.TryParse(Numero1Entry.Text, out double num1))
+		{
+			MensajeLabel.Text = "Número 1 inválido";
+			MensajeLabel.TextColor = Colors.Red;
+			return;
+		}
+
+		if (!double.TryParse(Numero2Entry.Text, out double num2))
+		{
+			MensajeLabel.Text = "Número 2 inválido";
+			MensajeLabel.TextColor = Colors.Red;
+			return;
+		}
+
+		if (OperacionPicker.SelectedIndex < 0)
+		{
+			MensajeLabel.Text = "Por favor, selecciona una operación";
+			MensajeLabel.TextColor = Colors.Red;
+			return;
+		}
+
+		double resultado = 0;
+		string operacion = OperacionPicker.SelectedItem.ToString();
+
+		try
+		{
+			switch (operacion)
+			{
+				case "Sumar (+)":
+					resultado = num1 + num2;
+					break;
+				case "Restar (-)":
+					resultado = num1 - num2;
+					break;
+				case "Multiplicar (*)":
+					resultado = num1 * num2;
+					break;
+				case "Dividir (/)":
+					if (num2 == 0)
+					{
+						MensajeLabel.Text = "Error: No se puede dividir entre cero";
+						MensajeLabel.TextColor = Colors.Red;
+						return;
+					}
+					resultado = num1 / num2;
+					break;
+			}
+
+			ResultadoLabel.Text = $"Resultado: {resultado:F2}";
+			ResultadoLabel.TextColor = Colors.Green;
+			MensajeLabel.TextColor = Colors.Green;
+		}
+		catch (Exception ex)
+		{
+			MensajeLabel.Text = $"Error: {ex.Message}";
+			MensajeLabel.TextColor = Colors.Red;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<api>
+  <jcw-types>
+    <type name="MainActivity" package="crc64270742d6919b0072" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiAppCompatActivity" partial_assembly_qualified_name="AgendaSQLiteMAUI.MainActivity, AgendaSQLiteMAUI">
+      <constructors>
+        <constructor name="MainActivity" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="MainActivity" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+    </type>
+    <type name="MainApplication" package="crc64270742d6919b0072" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiApplication" is_application="True" partial_assembly_qualified_name="AgendaSQLiteMAUI.MainApplication, AgendaSQLiteMAUI" application_constructor="MainApplication" />
+  </jcw-types>
+  <acw-types partial-assembly-name="AgendaSQLiteMAUI" module-name="AgendaSQLiteMAUI.dll">
+    <type assembly-qualified-name="AgendaSQLiteMAUI.MainActivity, AgendaSQLiteMAUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="agendasqlitemaui.MainActivity" java-key="crc64270742d6919b0072.MainActivity" managed-key="AgendaSQLiteMAUI.MainActivity" partial-assembly-qualified-name="AgendaSQLiteMAUI.MainActivity, AgendaSQLiteMAUI" />
+    <type assembly-qualified-name="AgendaSQLiteMAUI.MainApplication, AgendaSQLiteMAUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="agendasqlitemaui.MainApplication" java-key="crc64270742d6919b0072.MainApplication" managed-key="AgendaSQLiteMAUI.MainApplication" partial-assembly-qualified-name="AgendaSQLiteMAUI.MainApplication, AgendaSQLiteMAUI" />
+  </acw-types>
+</api>

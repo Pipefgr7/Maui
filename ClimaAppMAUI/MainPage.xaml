@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClimaAppMAUI.MainPage"
+             Title="Aplicación del Clima">
+
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20"
+        VerticalOptions="Center"
+        BackgroundColor="#ECF0F1">
+
+        <Label
+            Text="CLIMA ACTUAL"
+            FontSize="36"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            TextColor="#2C3E50" />
+
+        <Frame
+            CornerRadius="15"
+            HasShadow="True"
+            Padding="20"
+            BackgroundColor="White">
+
+            <VerticalStackLayout
+                Spacing="15">
+
+                <Label
+                    Text="{Binding Clima.Ciudad}"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    TextColor="#3498DB" />
+
+                <Label
+                    Text="{Binding Clima.Descripcion}"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    TextColor="#34495E" />
+
+                <StackLayout
+                    Orientation="Horizontal"
+                    Spacing="20"
+                    HorizontalOptions="Center">
+
+                    <VerticalStackLayout
+                        Spacing="5"
+                        HorizontalOptions="Center">
+                        <Label
+                            Text="Temperatura"
+                            FontSize="14"
+                            TextColor="#7F8C8D"
+                            HorizontalOptions="Center" />
+                        <Label
+                            Text="{Binding Clima.Temperatura, StringFormat='{0}°C'}"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="#E74C3C"
+                            HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout
+                        Spacing="5"
+                        HorizontalOptions="Center">
+                        <Label
+                            Text="Humedad"
+                            FontSize="14"
+                            TextColor="#7F8C8D"
+                            HorizontalOptions="Center" />
+                        <Label
+                            Text="{Binding Clima.Humedad, StringFormat='{0}%'}"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="#3498DB"
+                            HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout
+                        Spacing="5"
+                        HorizontalOptions="Center">
+                        <Label
+                            Text="Viento"
+                            FontSize="14"
+                            TextColor="#7F8C8D"
+                            HorizontalOptions="Center" />
+                        <Label
+                            Text="{Binding Clima.Velocidad_Viento, StringFormat='{0} km/h'}"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="#27AE60"
+                            HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+
+                </StackLayout>
+
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <Button
+            Text="Actualizar Clima"
+            FontSize="18"
+            Padding="15"
+            BackgroundColor="#3498DB"
+            TextColor="White"
+            CornerRadius="8"
+            Command="{Binding ActualizarClimaCommand}" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

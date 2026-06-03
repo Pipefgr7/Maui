@@ -1,0 +1,15 @@
+<api>
+  <jcw-types>
+    <type name="MainActivity" package="crc6473ef2a9e0ce9c8b4" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiAppCompatActivity" partial_assembly_qualified_name="MiniCalculadoraMAUI.MainActivity, MiniCalculadoraMAUI">
+      <constructors>
+        <constructor name="MainActivity" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="MainActivity" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+    </type>
+    <type name="MainApplication" package="crc6473ef2a9e0ce9c8b4" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiApplication" is_application="True" partial_assembly_qualified_name="MiniCalculadoraMAUI.MainApplication, MiniCalculadoraMAUI" application_constructor="MainApplication" />
+  </jcw-types>
+  <acw-types partial-assembly-name="MiniCalculadoraMAUI" module-name="MiniCalculadoraMAUI.dll">
+    <type assembly-qualified-name="MiniCalculadoraMAUI.MainActivity, MiniCalculadoraMAUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="minicalculadoramaui.MainActivity" java-key="crc6473ef2a9e0ce9c8b4.MainActivity" managed-key="MiniCalculadoraMAUI.MainActivity" partial-assembly-qualified-name="MiniCalculadoraMAUI.MainActivity, MiniCalculadoraMAUI" />
+    <type assembly-qualified-name="MiniCalculadoraMAUI.MainApplication, MiniCalculadoraMAUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="minicalculadoramaui.MainApplication" java-key="crc6473ef2a9e0ce9c8b4.MainApplication" managed-key="MiniCalculadoraMAUI.MainApplication" partial-assembly-qualified-name="MiniCalculadoraMAUI.MainApplication, MiniCalculadoraMAUI" />
+  </acw-types>
+</api>

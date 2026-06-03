@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaTareasMAUI.MainPage"
+             Title="Lista de Tareas">
+
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="15"
+        BackgroundColor="#ECF0F1">
+
+        <Label
+            Text="MIS TAREAS"
+            FontSize="36"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            TextColor="#2C3E50" />
+
+        <StackLayout
+            Spacing="10"
+            Orientation="Horizontal">
+            <Entry
+                x:Name="TareaEntry"
+                Text="{Binding NuevaTareaTexto}"
+                Placeholder="Ingresa una nueva tarea"
+                FontSize="14"
+                BackgroundColor="White"
+                TextColor="#2C3E50"
+                PlaceholderColor="#95A5A6" />
+            <Button
+                Text="+"
+                FontSize="24"
+                FontAttributes="Bold"
+                Padding="10"
+                BackgroundColor="#27AE60"
+                TextColor="White"
+                WidthRequest="50"
+                Command="{Binding AgregarTareaCommand}" />
+        </StackLayout>
+
+        <CollectionView
+            ItemsSource="{Binding Tareas}"
+            SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout
+                        Padding="15"
+                        Spacing="10"
+                        BackgroundColor="White"
+                        Margin="0,5">
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Spacing="10">
+                            <CheckBox
+                                IsChecked="{Binding Completada}"
+                                VerticalOptions="Center" />
+                            <StackLayout
+                                Spacing="2"
+                                VerticalOptions="Center">
+                                <Label
+                                    Text="{Binding Titulo}"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="#2C3E50" />
+                                <Label
+                                    Text="{Binding Fecha, StringFormat='Creada: {0:dd/MM/yyyy HH:mm}'}"
+                                    FontSize="12"
+                                    TextColor="#7F8C8D" />
+                            </StackLayout>
+                            <Button
+                                Text="🗑️"
+                                FontSize="18"
+                                Padding="5"
+                                BackgroundColor="#E74C3C"
+                                TextColor="White"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarTareaCommand}"
+                                CommandParameter="{Binding .}"
+                                HorizontalOptions="End" />
+                        </StackLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>

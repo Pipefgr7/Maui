@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\MiPrimeraAppMAUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{47A89A8B-45CB-4FAE-678A-D537D7228CF5}|AgendaSQLiteMAUI\\AgendaSQLiteMAUI.csproj|c:\\users\\user\\source\\repos\\miprimeraappmaui\\agendasqlitemaui\\viewmodels\\agendaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47A89A8B-45CB-4FAE-678A-D537D7228CF5}|AgendaSQLiteMAUI\\AgendaSQLiteMAUI.csproj|solutionrelative:agendasqlitemaui\\viewmodels\\agendaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47A89A8B-45CB-4FAE-678A-D537D7228CF5}|AgendaSQLiteMAUI\\AgendaSQLiteMAUI.csproj|c:\\users\\user\\source\\repos\\miprimeraappmaui\\agendasqlitemaui\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47A89A8B-45CB-4FAE-678A-D537D7228CF5}|AgendaSQLiteMAUI\\AgendaSQLiteMAUI.csproj|solutionrelative:agendasqlitemaui\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47A89A8B-45CB-4FAE-678A-D537D7228CF5}|AgendaSQLiteMAUI\\AgendaSQLiteMAUI.csproj|c:\\users\\user\\source\\repos\\miprimeraappmaui\\agendasqlitemaui\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47A89A8B-45CB-4FAE-678A-D537D7228CF5}|AgendaSQLiteMAUI\\AgendaSQLiteMAUI.csproj|solutionrelative:agendasqlitemaui\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47A89A8B-45CB-4FAE-678A-D537D7228CF5}|AgendaSQLiteMAUI\\AgendaSQLiteMAUI.csproj|c:\\users\\user\\source\\repos\\miprimeraappmaui\\agendasqlitemaui\\services\\basedatosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47A89A8B-45CB-4FAE-678A-D537D7228CF5}|AgendaSQLiteMAUI\\AgendaSQLiteMAUI.csproj|solutionrelative:agendasqlitemaui\\services\\basedatosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AgendaViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\MiPrimeraAppMAUI\\AgendaSQLiteMAUI\\ViewModels\\AgendaViewModel.cs",
+              "RelativeDocumentMoniker": "AgendaSQLiteMAUI\\ViewModels\\AgendaViewModel.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\MiPrimeraAppMAUI\\AgendaSQLiteMAUI\\ViewModels\\AgendaViewModel.cs",
+              "RelativeToolTip": "AgendaSQLiteMAUI\\ViewModels\\AgendaViewModel.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAIAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T19:21:33.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaseDatosService.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\MiPrimeraAppMAUI\\AgendaSQLiteMAUI\\Services\\BaseDatosService.cs",
+              "RelativeDocumentMoniker": "AgendaSQLiteMAUI\\Services\\BaseDatosService.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\MiPrimeraAppMAUI\\AgendaSQLiteMAUI\\Services\\BaseDatosService.cs",
+              "RelativeToolTip": "AgendaSQLiteMAUI\\Services\\BaseDatosService.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T19:14:34.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\MiPrimeraAppMAUI\\AgendaSQLiteMAUI\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "AgendaSQLiteMAUI\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\MiPrimeraAppMAUI\\AgendaSQLiteMAUI\\MainPage.xaml.cs",
+              "RelativeToolTip": "AgendaSQLiteMAUI\\MainPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T19:11:24.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\MiPrimeraAppMAUI\\AgendaSQLiteMAUI\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "AgendaSQLiteMAUI\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\MiPrimeraAppMAUI\\AgendaSQLiteMAUI\\MauiProgram.cs",
+              "RelativeToolTip": "AgendaSQLiteMAUI\\MauiProgram.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T19:11:19.06Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

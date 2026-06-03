@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="MiniCalculadoraMAUI" mvid="5edccb03092345ad9e9124c78e0ff370">
+  <java-to-managed>
+    <entry java-name="crc6473ef2a9e0ce9c8b4/MainActivity" managed-name="MiniCalculadoraMAUI.MainActivity, MiniCalculadoraMAUI" managed-type-token-id="33554442" />
+    <entry java-name="crc6473ef2a9e0ce9c8b4/MainApplication" managed-name="MiniCalculadoraMAUI.MainApplication, MiniCalculadoraMAUI" managed-type-token-id="33554443" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc6473ef2a9e0ce9c8b4/MainActivity" managed-name="MiniCalculadoraMAUI.MainActivity, MiniCalculadoraMAUI" managed-type-token-id="33554442" />
+    <entry java-name="crc6473ef2a9e0ce9c8b4/MainApplication" managed-name="MiniCalculadoraMAUI.MainApplication, MiniCalculadoraMAUI" managed-type-token-id="33554443" />
+  </managed-to-java>
+</api>
